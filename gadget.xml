@@ -21,8 +21,8 @@
   <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" />
 </form>
 
-<script src="https://fb.me/react-0.12.2.js"></script>
-<script src="https://fb.me/JSXTransformer-0.12.2.js"></script>
+<script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
+<script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/jsxtransformer.js"></script>
 
 <script type="text/jsx">
   showData = [
