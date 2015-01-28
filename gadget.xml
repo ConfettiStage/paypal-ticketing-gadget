@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<Module>
+  <Content type="html"> 
+  <![CDATA[ 
+
+  <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+  <input name="cmd" type="hidden" value="_s-xclick" />
+  <input name="hosted_button_id" type="hidden" value="YVY6U9UXGS594" />
+
+  <table>
+    <tr><td><input name="on0" type="hidden" value="Confetti Stage Tickets" />Confetti Stage Tickets</td></tr>
+    <tr><td>
+      <div id="ticketOptions"></div>
+    </td></tr>
+  </table>
+  <input name="currency_code" type="hidden" value="USD" />
+  <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" type="image" />
+  <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" />
+</form>
+
+<script src="http://fb.me/react-0.12.2.js"></script>
+<script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+
+<script type="text/jsx">
+  showData = [
+    {
+      name: "Waiting for Godot",
+      studentDiscount: true,
+      times: [
+        "Friday 730",
+        "Saturday"
+      ]
+    },
+    {
+      name: "Water by the Spoonful",
+      times: [
+        "Friday",
+        "Saturday"
+      ]
+    }
+  ];
+  var Options = React.createClass({
+    render: function () {
+      var options = [];
+      this.props.data.forEach( function (show) {
+        show.times.forEach( function (time) {
+          options.push(<option value="General Admission">{show.name} @ {time} - General Admission $15.00</option>);
+          if (show.studentDiscount) {
+            options.push(<option value="Student Admission">{show.name} @ {time} - Student Admission $10.00</option>);
+          }
+        });
+      });
+      options.push(<option value="FlexTix">FlexTix (5 Tickets) $50.00</option>)
+      return (
+        <select name="os0">
+          { options }
+        </select>);
+    }
+  });
+  React.render(
+    <Options data={showData} />,
+    document.getElementById('ticketOptions')
+  );
+</script>
+  ]]> 
+  </Content>
+</Module>
