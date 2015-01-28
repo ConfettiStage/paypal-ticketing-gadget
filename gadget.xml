@@ -7,8 +7,8 @@
   <![CDATA[ 
 
   <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
-  <input name="cmd" type="hidden" value="_s-xclick" />
-  <input name="hosted_button_id" type="hidden" value="YVY6U9UXGS594" />
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="YVY6U9UXGS594">
 
   <table>
     <tr><td><input name="on0" type="hidden" value="Confetti Stage Tickets" />Confetti Stage Tickets</td></tr>
@@ -47,9 +47,9 @@
       var options = [];
       this.props.data.forEach( function (show) {
         show.times.forEach( function (time) {
-          options.push(<option value="General Admission">{show.name} @ {time} - General Admission $15.00</option>);
+          options.push(<option value="Standard Ticket">{show.name} @ {time} - General Admission $15.00</option>);
           if (show.studentDiscount) {
-            options.push(<option value="Student Admission">{show.name} @ {time} - Student Admission $10.00</option>);
+            options.push(<option value="Student Ticket">{show.name} @ {time} - Student Admission $10.00</option>);
           }
         });
       });
