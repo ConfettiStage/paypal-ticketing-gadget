@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?> 
 <Module>
+  <ModulePrefs
+    title="Ticket Gadget"
+    height="300"/>
   <Content type="html"> 
   <![CDATA[ 
 
