@@ -23,48 +23,7 @@
 
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/jsxtransformer.js"></script>
-
-<script type="text/jsx">
-  showData = [
-    {
-      name: "Waiting for Godot",
-      studentDiscount: true,
-      times: [
-        "Friday 730",
-        "Saturday"
-      ]
-    },
-    {
-      name: "Water by the Spoonful",
-      times: [
-        "Friday",
-        "Saturday"
-      ]
-    }
-  ];
-  var Options = React.createClass({
-    render: function () {
-      var options = [];
-      this.props.data.forEach( function (show) {
-        show.times.forEach( function (time) {
-          options.push(<option value="Standard Ticket">{show.name} @ {time} - General Admission $15.00</option>);
-          if (show.studentDiscount) {
-            options.push(<option value="Student Ticket">{show.name} @ {time} - Student Admission $10.00</option>);
-          }
-        });
-      });
-      options.push(<option value="FlexTix">FlexTix (5 Tickets) $50.00</option>)
-      return (
-        <select name="os0">
-          { options }
-        </select>);
-    }
-  });
-  React.render(
-    <Options data={showData} />,
-    document.getElementById('ticketOptions')
-  );
-</script>
+<script type="text/jsx" src="https://confetti-paypal-gadget.googlecode.com/git-history/master/ticketwindow.js"></script>
   ]]> 
   </Content>
 </Module>
