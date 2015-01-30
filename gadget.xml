@@ -21,6 +21,25 @@
   <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" />
 </form>
 
+<script>
+    showData = [
+    {
+      name: "Waiting for Godot",
+      studentDiscount: true,
+      times: [
+        "Friday 730",
+        "Saturday"
+      ]
+    },
+    {
+      name: "Water by the Spoonful",
+      times: [
+        "Friday",
+        "Saturday"
+      ]
+    }
+  ];
+</script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/jsxtransformer.js"></script>
 <script type="text/jsx" src="https://confetti-paypal-gadget.googlecode.com/git-history/master/ticketwindow.js"></script>
