@@ -1,4 +1,6 @@
-  showData = [
+function() {
+
+ showData = [
     {
       name: "Waiting for Godot",
       studentDiscount: true,
@@ -54,3 +56,4 @@
     <TicketWindow data={showData} />,
     document.getElementById('ticketOptions')
   );
+}();
