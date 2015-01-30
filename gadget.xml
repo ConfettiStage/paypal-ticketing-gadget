@@ -48,7 +48,7 @@ var ShowOptions = React.createClass({
     var options = [];
     this.props.data.forEach( function (show) {
       show.times.forEach( function (time) {
-        options.push(<option value={show.name}+" @ "+{time}>{show.name} @ {time}</option>);
+        options.push(<option value={show.name+" @ "+time}>{show.name} @ {time}</option>);
       });
     });
     return (
