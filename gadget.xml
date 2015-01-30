@@ -25,25 +25,25 @@
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/jsxtransformer.js"></script>
 <script type="text/jsx">
- showData = [
-  {
-    name: "Waiting for Godot",
-    studentDiscount: true,
-    times: [
-      "Friday 730",
-      "Saturday"
-    ]
-  },
-  {
-    name: "Water by the Spoonful",
-    times: [
-      "Friday",
-      "Saturday"
-    ]
-  }
-];
-  
-var ShowsOptions = React.createClass({
+var showData = [
+      {
+        name: "Waiting for Godot",
+        studentDiscount: true,
+        times: [
+          "Friday 730",
+          "Saturday"
+        ]
+      },
+      {
+        name: "Water by the Spoonful",
+        times: [
+          "Friday",
+          "Saturday"
+        ]
+      }
+    ];
+
+var ShowOptions = React.createClass({
   render: function () {
     var options = [];
     this.props.data.forEach( function (show) {
@@ -52,10 +52,12 @@ var ShowsOptions = React.createClass({
       });
     });
     return (
-      <input type="hidden" name="on1" value="Show and Time">
+      <div>
+      <input type="hidden" name="on1" value="Show and Time"/>
       <select name="os1">
         { options }
       </select>
+      </div>
     );
   }
 });
@@ -66,18 +68,19 @@ var TypeOptions = React.createClass({
     options.push(<option value="Standard Ticket">General Admission $15.00</option>);
     options.push(<option value="Student Ticket">Student Admission $10.00</option>);
     options.push(<option value="FlexTix">FlexTix (5 Tickets) $50.00</option>)
-    return (
-      <input type="hidden" name="on0" value="Ticket Type">
+    return (<div>
+      <input type="hidden" name="on0" value="Ticket Type"/>
       <select name="os0">
         { options }
       </select>
+      </div>
     );
   }
 });
 
 var TicketWindow = React.createClass({
   render: function () {
-    return (<Options data={this.props.data} /><TypeOptions />);
+    return (<div><ShowOptions data={this.props.data} /><TypeOptions /></div>);
   }
 });
 
@@ -85,7 +88,6 @@ React.render(
   <TicketWindow data={showData} />,
   document.getElementById('ticketOptions')
 );
-</script>
   ]]> 
   </Content>
 </Module>
