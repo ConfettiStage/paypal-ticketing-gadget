@@ -21,7 +21,7 @@
   <img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" />
 </form>
 
-
+<script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/showdata.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/jsxtransformer.js"></script>
 <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/ticketwindow.js"></script>
