@@ -2,10 +2,10 @@ var Show = React.createClass({
   changeShow: function(evt) {
     var showData = this.props.data[this.state.show];
     this.setState({
-      show = evt.target.value,
-      paypal = showData.paypal,
-      dates = showData.dates,
-      tickets = showData.tickets
+      show: evt.target.value,
+      paypal: showData.paypal,
+      dates: showData.dates,
+      tickets: showData.tickets
     });
   },
   render: function () {
@@ -21,7 +21,7 @@ var Show = React.createClass({
           </select>
         </div>
         <div>
-          <input type="hidden" name="hosted_button_id" value="{this.state.paypal}">
+          <input type="hidden" name="hosted_button_id" value="{this.state.paypal}"/>
           <Dates />
           <Type />
         </div>
@@ -51,7 +51,7 @@ var Type = React.createClass({
   render: function () {
     var options = [];
     this.state.tickets.forEach( function (ticket) {
-      options.push(<option value={ticket.type}>{ticket.desc\}</option>);
+      options.push(<option value={ticket.type}>{ticket.desc}</option>);
     });
     options.push(<option value="FlexTix">FlexTix (4 tickets) $50.00</option>);
     return (
@@ -69,7 +69,7 @@ var TicketWindow = React.createClass({
   render: function () {
     return (
       <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
-        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="cmd" value="_s-xclick"/>
         <input name="currency_code" type="hidden" value="USD" />
         <Show data={this.props.data}/>
         <div>  
