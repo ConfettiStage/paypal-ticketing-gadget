@@ -125,6 +125,7 @@ var showData = {
   }
 };
 
+
 React.render(
   <TicketWindow data={showData} />,
   document.getElementById('ticketWindow')
