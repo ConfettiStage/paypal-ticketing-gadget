@@ -82,5 +82,5 @@ var TicketWindow = React.createClass({
 
 React.render(
   <TicketWindow data={showData} />,
-  document.getElementById('ticketOptions')
+  document.getElementById('ticketWindow')
 );
