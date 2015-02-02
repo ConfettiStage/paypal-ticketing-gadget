@@ -1,12 +1,11 @@
 var Show = React.createClass({displayName: "Show",
   getInitialState: function () {
-    var showData = this.props.data[0];
-    this.setState({
-      show: showData.name,
-      paypal: showData.paypal,
-      dates: showData.dates,
-      tickets: showData.tickets
-    });
+    return {
+      show: "-choose a show-",
+      paypal: '',
+      dates: [],
+      tickets: []
+    };
   },
   changeShow: function(evt) {
     var showData;
@@ -23,65 +22,59 @@ var Show = React.createClass({displayName: "Show",
     });
   },
   render: function () {
-    var options = [];
-    if (this.props.data) {
-      this.props.data.forEach( function (show, object) {
-        options.push(React.createElement("option", {value: show}, show))
-      });  
-    }
+    var options = [React.createElement("option", null, "-choose show-")];
+    this.props.data.forEach( function (show) {
+      options.push(React.createElement("option", {key: show.name, value: show.name}, show.name))
+    });  
     
     return (
       React.createElement("div", null, 
         React.createElement("div", null, 
           React.createElement("select", {onChange: this.changeShow}, 
-            options 
+            React.createElement("option", null, "-choose show-"), 
+            this.props.data.map( function (show) {
+              return React.createElement("option", {key: show.name, value: show.name}, show.name)
+            })
           )
         ), 
         React.createElement("div", null, 
           React.createElement("input", {type: "hidden", name: "hosted_button_id", value: "{this.state.paypal}"}), 
-          React.createElement(Dates, null), 
-          React.createElement(Type, null)
+          React.createElement(DateSelect, {dates: this.state.dates}), 
+          React.createElement(TicketSelect, {tickets: this.state.tickets})
         )
       )
     );
   }
 });
 
-var Dates = React.createClass({displayName: "Dates",
+var DateSelect = React.createClass({displayName: "DateSelect",
   render: function () {
-    var options = [];
-    if (this.state.dates) {
-      this.state.dates.forEach( function (date) {
-        options.push(React.createElement("option", {value: date}, date));
-      });  
-    }
-    
     return (
       React.createElement("div", null, 
         React.createElement("input", {type: "hidden", name: "on1", value: "Time"}), 
         React.createElement("select", {name: "os1"}, 
-          options 
+        React.createElement("option", null, "-choose a time"), 
+        this.props.dates.map( function (date) {
+          return React.createElement("option", {key: date, value: date}, date);
+        })
         )
       )
     );
   }
 });
 
-var Type = React.createClass({displayName: "Type",
+var TicketSelect = React.createClass({displayName: "TicketSelect",
   render: function () {
-    var options = [];
-    if (this.state.tickets) {
-      this.state.tickets.forEach( function (ticket) {
-        options.push(React.createElement("option", {value: ticket.type}, ticket.desc));
-      });  
-    }
-    
-    options.push(React.createElement("option", {value: "FlexTix"}, "FlexTix (4 tickets) $50.00"));
+    console.log(this.props.tickets);
     return (
       React.createElement("div", null, 
         React.createElement("input", {type: "hidden", name: "on0", value: "Ticket Type"}), 
         React.createElement("select", {name: "os0"}, 
-          options 
+        React.createElement("option", null, "-choose a ticket type-"), 
+        this.props.tickets.map( function (ticket) {
+          return React.createElement("option", {key: ticket[1], value: ticket.type}, ticket.desc);
+        }), 
+        React.createElement("option", {value: "FlexTix"}, "FlexTix (4 tickets) $50.00")
         )
       )
     );
@@ -91,14 +84,7 @@ var Type = React.createClass({displayName: "Type",
 var TicketWindow = React.createClass({displayName: "TicketWindow",
   render: function () {
     return (
-      React.createElement("form", {xmlns: "http://www.w3.org/1999/xhtml", action: "https://www.paypal.com/cgi-bin/webscr", method: "post", target: "paypal"}, 
-        React.createElement("input", {type: "hidden", name: "cmd", value: "_s-xclick"}), 
-        React.createElement("input", {name: "currency_code", type: "hidden", value: "USD"}), 
-        React.createElement(Show, {data: this.props.data}), 
-        React.createElement("div", null, 
-          React.createElement("input", {alt: "PayPal - The safer, easier way to pay online!", border: "0", name: "submit", src: "https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif", type: "image"})
-        )
-      )
+        React.createElement(Show, {data: this.props.data})
     );
   }
 });
