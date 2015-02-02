@@ -33,9 +33,12 @@ var Show = React.createClass({
 var Dates = React.createClass({
   render: function () {
     var options = [];
-    this.state.dates.forEach( function (date) {
-      options.push(<option value={date}>{date}</option>);
-    });
+    if (this.state.dates) {
+      this.state.dates.forEach( function (date) {
+        options.push(<option value={date}>{date}</option>);
+      });  
+    }
+    
     return (
       <div>
         <input type="hidden" name="on1" value="Time"/>
@@ -50,9 +53,12 @@ var Dates = React.createClass({
 var Type = React.createClass({
   render: function () {
     var options = [];
-    this.state.tickets.forEach( function (ticket) {
-      options.push(<option value={ticket.type}>{ticket.desc}</option>);
-    });
+    if (this.state.tickets) {
+      this.state.tickets.forEach( function (ticket) {
+        options.push(<option value={ticket.type}>{ticket.desc}</option>);
+      });  
+    }
+    
     options.push(<option value="FlexTix">FlexTix (4 tickets) $50.00</option>);
     return (
       <div>

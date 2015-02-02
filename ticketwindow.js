@@ -33,9 +33,12 @@ var Show = React.createClass({displayName: "Show",
 var Dates = React.createClass({displayName: "Dates",
   render: function () {
     var options = [];
-    this.state.dates.forEach( function (date) {
-      options.push(React.createElement("option", {value: date}, date));
-    });
+    if (this.state.dates) {
+      this.state.dates.forEach( function (date) {
+        options.push(React.createElement("option", {value: date}, date));
+      });  
+    }
+    
     return (
       React.createElement("div", null, 
         React.createElement("input", {type: "hidden", name: "on1", value: "Time"}), 
@@ -50,9 +53,12 @@ var Dates = React.createClass({displayName: "Dates",
 var Type = React.createClass({displayName: "Type",
   render: function () {
     var options = [];
-    this.state.tickets.forEach( function (ticket) {
-      options.push(React.createElement("option", {value: ticket.type}, ticket.desc));
-    });
+    if (this.state.tickets) {
+      this.state.tickets.forEach( function (ticket) {
+        options.push(React.createElement("option", {value: ticket.type}, ticket.desc));
+      });  
+    }
+    
     options.push(React.createElement("option", {value: "FlexTix"}, "FlexTix (4 tickets) $50.00"));
     return (
       React.createElement("div", null, 
