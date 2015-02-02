@@ -1,4 +1,4 @@
-window.showData = {
+var showData = {
   "Waiting for Godot" : {
     paypal: "YVY6U9UXGS594",
     tickets: [
