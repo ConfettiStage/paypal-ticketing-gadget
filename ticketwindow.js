@@ -124,6 +124,7 @@ var showData = {
     ]
   }
 };
+
 React.render(
   React.createElement(TicketWindow, {data: showData}),
   document.getElementById('ticketWindow')
