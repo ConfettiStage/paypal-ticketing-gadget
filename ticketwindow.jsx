@@ -1,8 +1,22 @@
 var Show = React.createClass({
-  changeShow: function(evt) {
-    var showData = this.props.data[this.state.show];
+  getInitialState: {
+    var showData = this.props.data[0];
     this.setState({
-      show: evt.target.value,
+      show: showData.name,
+      paypal: showData.paypal,
+      dates: showData.dates,
+      tickets: showData.tickets
+    });
+  },
+  changeShow: function(evt) {
+    var showData;
+    this.props.data.forEach(function (show) {
+      if (evt.target.value === show.name) {
+        showData = show;
+      }
+    });
+    this.setState({
+      show: showData.name,
       paypal: showData.paypal,
       dates: showData.dates,
       tickets: showData.tickets

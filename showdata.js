@@ -1,5 +1,6 @@
-var showData = {
-  "Waiting for Godot" : {
+var showData = [
+  {
+    name: "Waiting for Godot",
     paypal: "YVY6U9UXGS594",
     tickets: [
       { 
@@ -16,9 +17,8 @@ var showData = {
       "Saturday"
     ]
   },
-
-  "Water by the Spoonful":
   {
+    name: "Water by the Spoonful",
     paypal: "DE8XKVFFVN2BL",
     tickets: [
       { 
@@ -35,4 +35,4 @@ var showData = {
       "Saturday"
     ]
   }
-};
+];
