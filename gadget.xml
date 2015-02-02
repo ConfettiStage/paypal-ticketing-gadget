@@ -5,10 +5,10 @@
     height="300"/>
   <Content type="html"> 
   <![CDATA[ 
-  <div id="ticketWindow"></div>
-  <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/showdata.js"></script>
-  <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
-  <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/ticketwindow.js"></script>
+    <div id="ticketWindow"></div>
+    <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/showdata.js"></script>
+    <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/react.js"></script>
+    <script src="https://confetti-paypal-gadget.googlecode.com/git-history/master/ticketwindow.js"></script>
   ]]> 
   </Content>
 </Module>
