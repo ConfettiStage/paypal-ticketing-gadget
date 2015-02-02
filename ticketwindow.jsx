@@ -1,33 +1,65 @@
-var ShowOptions = React.createClass({
+var Show = React.createClass({
+  changeShow: function(evt) {
+    var showData = this.props.data[this.state.show];
+    this.setState({
+      show = evt.target.value,
+      paypal = showData.paypal,
+      dates = showData.dates,
+      tickets = showData.tickets
+    });
+  },
   render: function () {
     var options = [];
-    this.props.data.forEach( function (show) {
-      show.times.forEach( function (time) {
-        options.push(<option value={show.name+" @ "+time}>{show.name} @ {time}</option>);
-      });
+    this.props.data.forEach( function (show, object) {
+      options.push(<option value={show}>{show}</option>)
     });
     return (
       <div>
-      <input type="hidden" name="on1" value="Show and Time"/>
-      <select name="os1">
-        { options }
-      </select>
+        <div>
+          <select onChange={this.changeShow}>
+            { options }
+          </select>
+        </div>
+        <div>
+          <input type="hidden" name="hosted_button_id" value="{this.state.paypal}">
+          <Dates />
+          <Type />
+        </div>
       </div>
     );
   }
 });
 
-var TypeOptions = React.createClass({
+var Dates = React.createClass({
   render: function () {
     var options = [];
-    options.push(<option value="Standard Ticket">General Admission $15.00</option>);
-    options.push(<option value="Student Ticket">Student Admission $10.00</option>);
-    options.push(<option value="FlexTix">FlexTix (5 Tickets) $50.00</option>)
-    return (<div>
-      <input type="hidden" name="on0" value="Ticket Type"/>
-      <select name="os0">
-        { options }
-      </select>
+    this.state.dates.forEach( function (date) {
+      options.push(<option value={date}>{date}</option>);
+    });
+    return (
+      <div>
+        <input type="hidden" name="on1" value="Time"/>
+        <select name="os1">
+          { options }
+        </select>
+      </div>
+    );
+  }
+});
+
+var Type = React.createClass({
+  render: function () {
+    var options = [];
+    this.state.tickets.forEach( function (ticket) {
+      options.push(<option value={ticket.type}>{ticket.desc\}</option>);
+    });
+    options.push(<option value="FlexTix">FlexTix (4 tickets) $50.00</option>);
+    return (
+      <div>
+        <input type="hidden" name="on0" value="Ticket Type"/>
+        <select name="os0">
+          { options }
+        </select>
       </div>
     );
   }
@@ -35,7 +67,16 @@ var TypeOptions = React.createClass({
 
 var TicketWindow = React.createClass({
   render: function () {
-    return (<div><ShowOptions data={this.props.data} /><TypeOptions /></div>);
+    return (
+      <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input name="currency_code" type="hidden" value="USD" />
+        <Show data={this.props.data}/>
+        <div>  
+          <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" type="image" />
+        </div>
+      </form>
+    );
   }
 });
 
