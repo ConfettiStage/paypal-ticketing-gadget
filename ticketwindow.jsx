@@ -1,5 +1,5 @@
 var Show = React.createClass({
-  getInitialState: {
+  getInitialState: function () {
     var showData = this.props.data[0];
     this.setState({
       show: showData.name,
