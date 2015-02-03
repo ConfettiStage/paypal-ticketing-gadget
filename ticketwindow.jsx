@@ -81,20 +81,12 @@ var TicketSelect = React.createClass({
   }
 });
 
-var TicketWindow = React.createClass({
-  render: function () {
-    return (
+React.render(
       <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
-        <input type="hidden" name="cmd" value="_s-xclick"/>
+        <input type="hidden" name="cmd" value="_s-xclick" />
         <input name="currency_code" type="hidden" value="USD" />
         <Show data={this.props.data}/>
         <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" type="image" />
-      </form>
-  }
-});
-
-
-React.render(
-  <TicketWindow data={showData} />,
+      </form>,
   document.getElementById('ticketWindow')
 );
