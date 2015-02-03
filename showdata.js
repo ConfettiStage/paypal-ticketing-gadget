@@ -1,6 +1,6 @@
 var showData = [
   {
-    name: "Waiting for Godot",
+    name: "Waiting for Godot", 
     paypal: "YVY6U9UXGS594",
     tickets: [
       { 
