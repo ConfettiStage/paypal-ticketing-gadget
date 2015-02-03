@@ -38,7 +38,7 @@ var Show = React.createClass({
           </select>
         </div>
         <div>
-          <input type="hidden" name="hosted_button_id" value="{this.state.paypal}"/>
+          <input type="hidden" name="hosted_button_id" value={this.state.paypal}/>
           <DateSelect dates={this.state.dates}/>
           <TicketSelect tickets={this.state.tickets}/>
         </div>

@@ -38,7 +38,7 @@ var Show = React.createClass({displayName: "Show",
           )
         ), 
         React.createElement("div", null, 
-          React.createElement("input", {type: "hidden", name: "hosted_button_id", value: "{this.state.paypal}"}), 
+          React.createElement("input", {type: "hidden", name: "hosted_button_id", value: this.state.paypal}), 
           React.createElement(DateSelect, {dates: this.state.dates}), 
           React.createElement(TicketSelect, {tickets: this.state.tickets})
         )
