@@ -13,26 +13,13 @@ var showData = [
       }
     ],
     dates: [
-      "Friday 730",
-      "Saturday"
-    ]
-  },
-  {
-    name: "Water by the Spoonful",
-    paypal: "DE8XKVFFVN2BL",
-    tickets: [
-      { 
-        type: "Standard Ticket", 
-        desc: "General Admission - $15.00" 
-      },
-      { 
-        type: "Vetern Ticket", 
-        desc: "Special Admission for Veterns Admission - $10.00"
-      }
-    ],
-    dates: [
-      "Friday",
-      "Saturday"
+      "Feb 27 at 7:30PM",
+      "Feb 28 at 7:30PM",
+      "Mar 1 at 2:00PM",
+      "Mar 5 at 7:30PM",
+      "Mar 6 at 7:30PM",
+      "Mar 7 at 7:30PM",
+      "Mar 8 at 2:00PM"
     ]
   }
 ];
