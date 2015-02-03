@@ -65,7 +65,6 @@ var DateSelect = React.createClass({displayName: "DateSelect",
 
 var TicketSelect = React.createClass({displayName: "TicketSelect",
   render: function () {
-    console.log(this.props.tickets);
     return (
       React.createElement("div", null, 
         React.createElement("input", {type: "hidden", name: "on0", value: "Ticket Type"}), 
@@ -82,11 +81,14 @@ var TicketSelect = React.createClass({displayName: "TicketSelect",
 });
 
 React.render(
+    React.createElement("div", null, 
+      React.createElement("link", {rel: "stylesheet", href: "ticketwindow.css"}), 
       React.createElement("form", {xmlns: "http://www.w3.org/1999/xhtml", action: "https://www.paypal.com/cgi-bin/webscr", method: "post", target: "paypal"}, 
         React.createElement("input", {type: "hidden", name: "cmd", value: "_s-xclick"}), 
         React.createElement("input", {name: "currency_code", type: "hidden", value: "USD"}), 
         React.createElement(Show, {data: showData}), 
         React.createElement("input", {alt: "PayPal - The safer, easier way to pay online!", border: "0", name: "submit", src: "https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif", type: "image"})
-      ),
+      )
+    ),
   document.getElementById('ticketWindow')
 );
