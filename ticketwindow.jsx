@@ -72,7 +72,7 @@ var TicketSelect = React.createClass({
         <select name="os0">
         <option>-choose a ticket type-</option>
         {this.props.tickets.map( function (ticket) {
-          return <option key={ticket[1]} value={ticket.type}>{ticket.desc}</option>;
+          return <option key={ticket.type} value={ticket.type}>{ticket.desc}</option>;
         })}
         <option value="FlexTix">FlexTix (4 tickets) $50.00</option>
         </select>
@@ -84,8 +84,12 @@ var TicketSelect = React.createClass({
 var TicketWindow = React.createClass({
   render: function () {
     return (
+      <form xmlns="http://www.w3.org/1999/xhtml" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+        <input type="hidden" name="cmd" value="_s-xclick"/>
+        <input name="currency_code" type="hidden" value="USD" />
         <Show data={this.props.data}/>
-    );
+        <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" type="image" />
+      </form>
   }
 });
 
