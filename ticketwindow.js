@@ -80,6 +80,7 @@ var TicketSelect = React.createClass({displayName: "TicketSelect",
     );
   }
 });
+
 React.render(
       React.createElement("form", {xmlns: "http://www.w3.org/1999/xhtml", action: "https://www.paypal.com/cgi-bin/webscr", method: "post", target: "paypal"}, 
         React.createElement("input", {type: "hidden", name: "cmd", value: "_s-xclick"}), 
