@@ -84,7 +84,10 @@ React.render(
         React.createElement("input", {type: "hidden", name: "cmd", value: "_s-xclick"}), 
         React.createElement("input", {name: "currency_code", type: "hidden", value: "USD"}), 
         React.createElement(Show, {data: showData}), 
-        React.createElement("input", {alt: "PayPal - The safer, easier way to pay online!", border: "0", name: "submit", src: "https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif", type: "image"})
+        React.createElement("input", {alt: "PayPal - The safer, easier way to pay online!", border: "0", name: "submit", src: "https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif", type: "image"}), 
+        React.createElement("p", {style: {color:'white'}}, 
+          "The receipt from PayPal will be your ticket. Please print it out and bring it to the performance."
+        )
       ),
   document.getElementById('ticketWindow')
 );

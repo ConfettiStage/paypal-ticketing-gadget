@@ -85,6 +85,9 @@ React.render(
         <input name="currency_code" type="hidden" value="USD" />
         <Show data={showData}/>
         <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" type="image" />
+        <p style={{color:'white'}}>
+          The receipt from PayPal will be your ticket. Please print it out and bring it to the performance.
+        </p>
       </form>,
   document.getElementById('ticketWindow')
 );
