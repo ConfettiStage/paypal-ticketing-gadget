@@ -1,14 +1,14 @@
 var showData = [
   {
-    name: "Waiting for Godot", 
+    name: "Waiting for Godot",
     paypal: "YVY6U9UXGS594",
     tickets: [
-      { 
-        type: "Standard Ticket", 
-        desc: "General Admission - $15.00" 
+      {
+        type: "Standard Ticket",
+        desc: "General Admission - $15.00"
       },
-      { 
-        type: "Student Ticket", 
+      {
+        type: "Student Ticket",
         desc: "Student Admission - $10.00"
       }
     ],
@@ -20,6 +20,19 @@ var showData = [
       "Mar 6 at 7:30PM",
       "Mar 7 at 7:30PM",
       "Mar 8 at 2:00PM"
+    ]
+  },
+  {
+    name: "FlexTix",
+    paypal: "RH8WDWMQ24AN4",
+    tickets: [
+      {
+        type: "FlexTix",
+        desc: "FlexTix (4 tickets) - $50.00"
+      }
+    ],
+    dates: [
+      "Any Show, Any Date, Any Time"
     ]
   }
 ];

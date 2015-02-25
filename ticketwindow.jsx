@@ -25,8 +25,8 @@ var Show = React.createClass({
     var options = [<option>-choose show-</option>];
     this.props.data.forEach( function (show) {
       options.push(<option key={show.name} value={show.name}>{show.name}</option>)
-    });  
-    
+    });
+
     return (
       <div>
         <div>
@@ -73,7 +73,6 @@ var TicketSelect = React.createClass({
         {this.props.tickets.map( function (ticket) {
           return <option key={ticket.type} value={ticket.type}>{ticket.desc}</option>;
         })}
-        <option value="FlexTix">FlexTix (4 tickets) $50.00</option>
         </select>
       </div>
     );
