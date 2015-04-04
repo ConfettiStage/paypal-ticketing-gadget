@@ -1,6 +1,6 @@
 var showData = [
   {
-    name: "Waiting for Godot",
+    name: "Water by the Spoonful",
     paypal: "YVY6U9UXGS594",
     tickets: [
       {
@@ -13,13 +13,13 @@ var showData = [
       }
     ],
     dates: [
-      "Feb 27 at 7:30PM",
-      "Feb 28 at 7:30PM",
-      "Mar 1 at 2:00PM",
-      "Mar 5 at 7:30PM",
-      "Mar 6 at 7:30PM",
-      "Mar 7 at 7:30PM",
-      "Mar 8 at 2:00PM"
+      "April 24 at 7:30PM",
+      "April 25 at 7:30PM",
+      "April 26 at 2:00PM",
+      "April 30 at 7:30PM",
+      "May 1 at 7:30PM",
+      "May 2 at 7:30PM",
+      "May 3 at 2:00PM"
     ]
   },
   {
@@ -33,6 +33,23 @@ var showData = [
     ],
     dates: [
       "Any Show, Any Date, Any Time"
+    ]
+  },
+  {
+    name: "Le Moulin Rouge Soiree",
+    paypal: "Q23H8QUDHMVQE",
+    tickets: [
+      {
+        type: "Advance Ticket",
+        desc: "Adveance Ticket - $20.00"
+      },
+      {
+        type: "Standard Ticket",
+        desc: "Standard Ticket - $25.00"
+      }
+    ],
+    dates: [
+      "May 16th at 7:00PM"
     ]
   }
 ];
