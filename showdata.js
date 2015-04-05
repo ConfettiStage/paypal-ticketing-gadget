@@ -41,7 +41,7 @@ var showData = [
     tickets: [
       {
         type: "Advance Ticket",
-        desc: "Adveance Ticket - $20.00"
+        desc: "Advance Ticket - $20.00"
       },
       {
         type: "Standard Ticket",
