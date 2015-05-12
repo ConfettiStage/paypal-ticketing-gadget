@@ -41,7 +41,7 @@ var showData = [
     tickets: [
       {
         type: "Advance Ticket",
-        desc: "Advance Ticket (until 5/9) - $20.00"
+        desc: "Advance Ticket (until 5/13) - $20.00"
       }
     ],
     dates: [
