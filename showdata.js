@@ -40,8 +40,8 @@ var showData = [
     paypal: "Q23H8QUDHMVQE",
     tickets: [
       {
-        type: "Advance Ticket",
-        desc: "Advance Ticket (until 5/13) - $20.00"
+        type: "Standard Ticket",
+        desc: "Standard Ticket - $25.00"
       }
     ],
     dates: [
