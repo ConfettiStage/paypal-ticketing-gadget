@@ -1,6 +1,27 @@
 var showData = [
   {
-    name: "Water by the Spoonful",
+    name: "Robin Hood and the King's Ransom",
+    paypal: "56KWR85N2AHEL",
+    tickets: [
+      {
+        type: "General Admission",
+        desc: "General Admission - $15.00"
+      },
+      {
+        type: "Student-Child Admission",
+        desc: "Student or Child Admission - $8.00"
+      }
+    ],
+    dates: [
+      "Friday, August 7th at 7:30PM",
+      "Saturday, August 8th at 7:30PM",
+      "Friday, August 14th at 7:30PM",
+      "Saturday, August 15th at 7:30PM",
+      "Sunday, August 16th at 2:00PM",
+    ]
+  },
+  {
+    name: "Confetti Fest XI",
     paypal: "YVY6U9UXGS594",
     tickets: [
       {
@@ -13,13 +34,7 @@ var showData = [
       }
     ],
     dates: [
-      "April 24 at 7:30PM",
-      "April 25 at 7:30PM",
-      "April 26 at 2:00PM",
-      "April 30 at 7:30PM",
-      "May 1 at 7:30PM",
-      "May 2 at 7:30PM",
-      "May 3 at 2:00PM"
+      "October at 7:30PM",
     ]
   },
   {
@@ -33,19 +48,6 @@ var showData = [
     ],
     dates: [
       "Any Show, Any Date, Any Time"
-    ]
-  },
-  {
-    name: "Le Moulin Rouge Soiree",
-    paypal: "Q23H8QUDHMVQE",
-    tickets: [
-      {
-        type: "Standard Ticket",
-        desc: "Standard Ticket - $25.00"
-      }
-    ],
-    dates: [
-      "May 16th at 7:00PM"
     ]
   }
 ];
