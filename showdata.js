@@ -9,7 +9,7 @@ var showData = [
       },
       {
         type: "Student-Child Admission",
-        desc: "Student or Child Admission - $8.00"
+        desc: "Child and Student Admission - $8.00"
       }
     ],
     dates: [
